@@ -1,0 +1,37 @@
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider / VS Code / VS
+.vscode/
+.idea/
+.vs/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment files
+appsettings.Development.json
+
+# Publish output
+publish/
+
+# EF migrations snapshot temp
+*.db
+*.sqlite
+
+# Node (if you add frontend later)
+node_modules/
+
+# Test results
+TestResults/
