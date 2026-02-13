@@ -1,18 +1,49 @@
 
 using Myapi.Models.product;
+using MyApi.Data;
 
 namespace MyApi.Services;
 
 public class ProductService : ProductModel
 {
-    private static List<ProductModel> _products = new()
+    private readonly AppDbContext _context;
+    public ProductService(AppDbContext context)
     {
-        new ProductModel { Id = 1, Name = "Laptop", Price = 1200 },
-        new ProductModel { Id = 2, Name = "Mouse", Price = 25 }
-    };
+        _context = context;
+    }
 
     public List<ProductModel> GetAll()
     {
-        return _products;
+
+        return _context.Products.ToList();
+    }
+
+    public ProductModel GetById(int id)
+    {
+        ProductModel res = _context.Products.FirstOrDefault(p => p.Id == id);
+        return res;
+    }
+
+    public ProductModel Create(ProductModel product)
+    {
+        _context.Products.Add(product);
+        _context.SaveChanges();
+        return product;
+    }
+
+    public ProductModel Update(int id, ProductModel product)
+    {
+        var existingProduct = _context.Products.FirstOrDefault(p => p.Id == id);
+        if (existingProduct == null)
+        {
+            return null;
+        }
+
+        existingProduct.Name = product.Name;
+        existingProduct.Price = product.Price;
+        existingProduct.Description = product.Description;
+
+        _context.SaveChanges();
+        return existingProduct;
     }
 }

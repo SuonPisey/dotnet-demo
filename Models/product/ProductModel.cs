@@ -1,4 +1,3 @@
-using Myapi.Models;
 namespace Myapi.Models.product
 {
     public class ProductModel
