@@ -132,3 +132,5 @@
 /Users/piseysuonmacbook/project/api/Myapi/bin/Debug/net10.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/piseysuonmacbook/project/api/Myapi/bin/Debug/net10.0/Microsoft.IdentityModel.Tokens.dll
 /Users/piseysuonmacbook/project/api/Myapi/bin/Debug/net10.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/piseysuonmacbook/project/api/Myapi/bin/Debug/net10.0/Myapi.staticwebassets.runtime.json
+/Users/piseysuonmacbook/project/api/Myapi/obj/Debug/net10.0/compressed/jyf3k9ebtk-{0}-lmpnj7itvg-lmpnj7itvg.gz

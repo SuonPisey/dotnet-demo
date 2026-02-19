@@ -16,6 +16,7 @@ public class AuthController : ControllerBase
         _userService = userService;
     }
 
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<ActionResult<ApiResponse<LoginResponse>>> Login(LoginRequest request)
     {

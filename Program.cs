@@ -32,6 +32,13 @@ builder.Services.AddAuthentication(options =>
             System.Text.Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]))
     };
 });
+builder.Services.AddAuthorization(options =>
+{
+    options.FallbackPolicy = new Microsoft.AspNetCore.Authorization.AuthorizationPolicyBuilder()
+        .RequireAuthenticatedUser()
+        .Build();
+});
+
 
 // 🔹 Register repositories
 builder.Services.AddScoped<IUserRepository, UserRepository>();

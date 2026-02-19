@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Myapi.Models.product;
 using MyApi.Data;
@@ -14,7 +15,6 @@ public class ProductController : ControllerBase
     {
         _context = context;
     }
-
 
     [HttpGet("all")]
     public async Task<ActionResult<ApiResponse<List<ProductModel>>>> GetAllProducts()
